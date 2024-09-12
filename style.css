@@ -3,7 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
-/* Sharon - Using flex for the hero section and the nav, havent gotten the hang of grid yet*/
+/* Sharon - Using flex for the hero section and the nav, haven't gotten the hang of grid yet*/
 /* HEADER */
 
 nav {
@@ -27,7 +27,7 @@ nav img {
     width: 50%;
 }
 
-.home {
+#home {
     border-bottom: 2px solid rgba(255,255,255,1);
     padding-bottom: 10%;
 }
@@ -35,6 +35,25 @@ nav img {
 .right-nav a {
     text-decoration: none;
     color: rgba(255,255,255,1);
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10%;
+}
+.right-nav a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.right-nav a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .right-nav p {
@@ -43,7 +62,10 @@ nav img {
 
 /* HERO SECTION */
 .hero-section {
-    background-color: rgba(156,153,176,1);
+    background-image: url(montaineering.jpg);
+    background-color: rgba(5, 5, 4, 0.8);
+    background-blend-mode: color;
+    background-size: cover;
     padding: 7% 7%;
     display: flex;
     justify-content: space-between;
@@ -52,6 +74,7 @@ nav img {
 
 .left-hero {
     width: 50%;
+    font-size: 150%;
 }
 
 .left-hero a {
@@ -59,10 +82,11 @@ nav img {
     color: rgba(255,255,255,1);
 }
 
-hero-head {
+.hero-head {
     /* this color though...*/
     color: rgba(63, 63,149,1);
-    font-size: 300%;
+    font-size: 200%;
+    text-shadow: 15px 15px 20px black;
 }
 
 #naps {
@@ -78,12 +102,16 @@ hero-head {
     background: none;
     color: white;
 }
-.complaint{
+
+.hero-btn:hover {
+    background-image: linear-gradient(to bottom right, rgba(63, 63,149,1), rgba(5, 5, 4, 0.7));
+}
+/*.complaint{
     padding: 5px;
     padding-bottom: 0;
     padding-right: 0;
     display: flex;
-}
+}*/
 .complaint h2{
     text-align: center;
     padding-bottom: 10px;
@@ -98,7 +126,7 @@ hero-head {
     width: 30%;
 }
 .complaint h4{
-   
+
     color: black;
     padding: 10px;
     font-size: 15px;
@@ -124,7 +152,6 @@ textarea{
     width: 95%;
     padding: 10px 5px;
     margin-top: 10px;
-    /*241968-Tade*/
     margin-bottom: 5px;
     border-style: none;
     border-radius: 5px;
@@ -135,14 +162,14 @@ button[type=submit]{
     border-style: none;
     border-radius: 5px;
     color: rgba(156,153,176,1);
-}
+}/*
 .last{
     background-color: rgba(63, 63,149,1);
     color: rgba(156,153,176,1);
     display: flex;
     height: 250px;
     justify-content: space-between;
-}
+}*/
 a{
     text-decoration: none;
     color: inherit;
@@ -224,12 +251,12 @@ hr{
 }
 .events button{
     text-transform: uppercase;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.725);
     color: white;
-    border: none;
+    border: 2PX white dashed;
     padding: 15px;
     display: block;
-    margin: 150px 45px;
+    margin: 150px 40px;
 }
 .naps-dinner-text{
     text-align: center;
@@ -248,42 +275,71 @@ hr{
     width: 100%;
     border-radius: 20px;
     box-shadow: 5px 5px 10px black;
+    transition: transform .2s;
+}
+.right-hero img:hover {
+    transform: scale(1.1);
 }
 /* PICTURE SECTION */
 .picture-section {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
-    padding: 3% 3%;
+    background-image: url(logo.png);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: color;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 2% 3%;
 }
 .picture-section img {
     width: 50%;
 }
 .left-pic-sect {
+    width: 60%;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    width: 70%;
+    justify-content: ;
+    align-items: center;
 }
 
 .first-pic {
-    width: 50%;
+    width: 20%;
+}
+.first-pic img:hover {
+    transform: scale(1.5);
 }
 .first-pic img {
     width: 100%;
+    transition: transform .2s;
 }
 
 .other-pic img {
-    width: 50%
+    width: 60%;
+    margin: 3% 0%;
+    display: block;
+    margin: 3% auto;
+    transition: transform .2s;
+    box-shadow: 4px 4px 9px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 5px 20px 5px 20px;
+}
+.other-pic img:hover {
+    transform: scale(1.1);
 }
 
 .other-pic {
-    width: 50%;
-    display: flex;
+    display: block;
+    margin-left: auto;
 }
 .right-pic-sect {
-    width: 30%;
-    margin: 0% 10%;
+    width: 40%;
+    /*margin: 0% 10%;*/
+    background-image: url(logo.png);
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: color;
+    background-size: contain;
+    padding: 10% 5%;
+    color: white;
 }
 .right-pic-sect p {
     font-weight: 700;
@@ -335,6 +391,144 @@ hr{
     display: grid;
     grid-template-columns: 250px 250px 250px 250px;
     gap: 20px;}
+}
+
+@media  screen and (max-width:850px ){
+    .left-hero {
+        width: 50%;
+        font-size: 120%;
+    }
+    .right-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 70%;
+        font-size: 80%;
+    }
+}
+
+@media  screen and (max-width:730px ){
+    .left-hero {
+        width: 50%;
+        font-size: 100%;
+    }
+    .right-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+        font-size: 70%;
+    }
+    .left-nav {
+        width: 30%;
+    }
+}
+
+@media  screen and (max-width:630px ){
+    .left-hero {
+        width: 50%;
+        font-size: 80%;
+    }
+    .right-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 70%;
+        font-size: 60%;
+    }
+    .left-nav {
+        width: 30%;
+    }
+    nav img {
+        width: 25%;
+    }
+}
+
+@media  screen and (max-width:500px ) {
+    .left-hero { 
+        width: 50%;
+        font-size: 60%;
+    }
+    .right-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+        font-size: 50%;
+    }
+    .left-nav {
+        width: 20%;
+    }
+    nav img {
+        width: 35%;
+    }
+}
+
+@media  screen and (max-width:500px ){
+    .left-hero {
+        width: 50%;
+        font-size: 60%;
+    }
+    .right-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+        font-size: 80%;
+    }
+    .left-nav {
+        width: 20%;
+    }
+    nav img {
+        width: 35%;
+    }
+}
+
+@media  screen and (max-width:430px ){
+    .left-hero {
+        width: 50%;
+        font-size: 50%;
+    }
+    .right-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+        font-size: 70%;
+    }
+    .left-nav {
+        width: 20%;
+    }
+    nav img {
+        width: 35%;
+    }
+}
+
+@media  screen and (max-width:390px ){
+    .left-hero {
+        width: 50%;
+        font-size: 40%;
+    }
+    .right-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+        font-size: 60%;
+    }
+    .left-nav {
+        width: 20%;
+    }
+    nav img {
+        width: 40%;
+    }
 }
 /*WE STARTED THIS PROJECT AND WHEN WE STARTED, WE DIDNT KNOW WHAT WE WERE TYPING. FOR YOU TO HAVE READ IT TO THIS A
 STAGE, I LOVE YOU . CHECK LINE 100 IN INDEX.HML */
